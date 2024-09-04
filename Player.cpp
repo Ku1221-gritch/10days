@@ -1,11 +1,11 @@
 #include "Player.h"
 
-Player::Player(Vector2 pos, int r, int speed)
+Player::Player(Vector2 pos, int r, int speed, int texGap)
 {
 	pos_ = pos;
 	r_ = r;
 	speed_ = speed;
-
+	texGap_ = texGap;
 }
 
 Player::~Player()
@@ -26,5 +26,6 @@ void Player::Update(char* keys, char* preKeys)
 
 void Player::Draw()
 {
-
+	texGap_ = 32;
+	Novice::DrawSprite((int)pos_.x - texGap_, (int)pos_.y, playerTex, 1, 1, 0.0f, WHITE);
 }

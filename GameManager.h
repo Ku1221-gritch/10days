@@ -1,27 +1,26 @@
-#pragma once
+ï»¿#pragma once
 
 #include <memory>
+#include<Novice.h>
 #include "IScene.h"
 #include"StageScene.h"
 #include"TitleScene.h"
 #include"ClearScene.h"
-#include"DeathScene.h"
-#include<Novice.h>
 
 using namespace std;
 
 class GameManager {
 private:
-	//ƒV[ƒ“‚ğ•Û‚·‚éƒƒ“ƒo•Ï”
+	//ã‚·ãƒ¼ãƒ³ã‚’ä¿æŒã™ã‚‹ãƒ¡ãƒ³ãƒå¤‰æ•°
 	unique_ptr<IScene> sceneArr_[3];
 
-	//‚Ç‚ÌƒXƒe[ƒW‚ğŒÄ‚Ño‚·‚©‚ğŠÇ—‚·‚é•Ï”
-	int currentSceneNo_;//Œ»İ‚ÌƒV[ƒ“
-	int prevSceneNo_;//‘O‚ÌƒV[ƒ“
+	//ã©ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å‘¼ã³å‡ºã™ã‹ã‚’ç®¡ç†ã™ã‚‹å¤‰æ•°
+	int currentSceneNo_;//ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³
+	int prevSceneNo_;//å‰ã®ã‚·ãƒ¼ãƒ³
 
 public:
-	GameManager();//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	~GameManager();//ƒfƒXƒgƒ‰ƒNƒ^
+	GameManager();//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	~GameManager();//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-	int Run(char* keys, char* preKeys);//‚±‚ÌŠÖ”‚ÅƒQ[ƒ€ƒ‹[ƒv‚ğŒÄ‚Ño‚·
+	int Run(char* keys, char* preKeys);//ã“ã®é–¢æ•°ã§ã‚²ãƒ¼ãƒ ãƒ«ãƒ¼ãƒ—ã‚’å‘¼ã³å‡ºã™
 };

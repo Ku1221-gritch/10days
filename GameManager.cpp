@@ -1,21 +1,20 @@
-#include "GameManager.h"
-#include"Novice.h"
+ï»¿#include "GameManager.h"
 
 using namespace std;
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 GameManager::GameManager()
 {
-	//ŠeƒV[ƒ“‚Ì”z—ñ
+	//å„ã‚·ãƒ¼ãƒ³ã®é…åˆ—
 	sceneArr_[TITLE] = make_unique<TitleScene>();
 	sceneArr_[STAGE] = make_unique<StageScene>();
 	sceneArr_[CLEAR] = make_unique<ClearScene>();
 
-	//‰ŠúƒV[ƒ“‚Ìİ’è
+	//åˆæœŸã‚·ãƒ¼ãƒ³ã®è¨­å®š
 	currentSceneNo_ = TITLE;
 }
 
-//ƒfƒXƒgƒ‰ƒNƒ^
+//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 GameManager::~GameManager()
 {
 
@@ -24,20 +23,20 @@ GameManager::~GameManager()
 int GameManager::Run(char* keys, char* preKeys)
 {
 
-	//ƒV[ƒ“‚Ìƒ`ƒFƒbƒN
+	//ã‚·ãƒ¼ãƒ³ã®ãƒã‚§ãƒƒã‚¯
 	prevSceneNo_ = currentSceneNo_;
 	currentSceneNo_ = sceneArr_[currentSceneNo_]->GetSceneNo();
 
-	//ƒV[ƒ“•ÏXƒ`ƒFƒbƒN
+	//ã‚·ãƒ¼ãƒ³å¤‰æ›´ãƒã‚§ãƒƒã‚¯
 	if (prevSceneNo_ != currentSceneNo_)
 	{
 		sceneArr_[currentSceneNo_]->Init();
 	}
 
-	//XVˆ—
-	sceneArr_[currentSceneNo_]->Update(keys, preKeys);//ƒV[ƒ“‚²‚Æ‚ÌXVˆ—
+	//æ›´æ–°å‡¦ç†
+	sceneArr_[currentSceneNo_]->Update(keys, preKeys);//ã‚·ãƒ¼ãƒ³ã”ã¨ã®æ›´æ–°å‡¦ç†
 
-	//•`‰æˆ—
+	//æç”»å‡¦ç†
 	sceneArr_[currentSceneNo_]->Draw();
 
 	return 0;

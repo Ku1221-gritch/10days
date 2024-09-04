@@ -11,6 +11,6 @@ void ClearScene::Update(char* keys, char* preKeys)
 
 void ClearScene::Draw()
 {
-	//ƒNƒŠƒA‰æ–Ê•`‰æ
-
+	//ã‚¯ãƒªã‚¢ç”»é¢æç”»
+	Novice::ScreenPrintf(670, 420, "GameClear");
 }

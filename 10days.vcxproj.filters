@@ -53,9 +53,6 @@
     <ClCompile Include="ClearScene.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
-    <ClCompile Include="DeathScene.cpp">
-      <Filter>KamataEngine</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
@@ -140,7 +137,6 @@
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="StageScene.h" />
     <ClInclude Include="ClearScene.h" />
-    <ClInclude Include="DeathScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Enemy.h" />
   </ItemGroup>

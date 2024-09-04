@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 #include"IScene.h"
 #include<Novice.h>
 
-//ƒ^ƒCƒgƒ‹ƒV[ƒ“
+//ã‚¿ã‚¤ãƒˆãƒ«ã‚·ãƒ¼ãƒ³
 class TitleScene : public IScene {
 public:
 	void Init() override;

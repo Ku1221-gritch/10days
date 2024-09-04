@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 #include"IScene.h"
 #include<Novice.h>
 
-//ƒNƒŠƒAƒV[ƒ“
+//ã‚¯ãƒªã‚¢ã‚·ãƒ¼ãƒ³
 class ClearScene : public IScene
 {
 public:

@@ -1,11 +1,11 @@
-#include "IScene.h"
+﻿#include "IScene.h"
 
-//�^�C�g���V�[���ŏ�����
+//タイトルシーンで初期化
 int IScene::sceneNo = TITLE;
 
-//���z�f�X�g���N�^�̒�`
-//�������z�֐������Ă��Ȃ��̂ŁA�����Œ�`�ł���
+//仮想デストラクタの定義
+//純粋仮想関数化していないので、ここで定義できる
 IScene::~IScene() {}
 
-//�V�[���ԍ��̃Q�b�^�[
+//シーン番号のゲッター
 int IScene::GetSceneNo() { return sceneNo; };

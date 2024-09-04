@@ -1,4 +1,4 @@
-#include "TitleScene.h"
+﻿#include "TitleScene.h"
 
 void TitleScene::Init() {}
 
@@ -12,5 +12,5 @@ void TitleScene::Update(char* keys, char* preKeys)
 
 void TitleScene::Draw()
 {
-
+	Novice::ScreenPrintf(670, 420, "push the space");
 }

@@ -1,11 +1,11 @@
-#pragma once
+Ôªø#pragma once
 #include"IScene.h"
 #include"Vector2.h"
 #include"Player.h"
 #include"Enemy.h"
 #include"Novice.h"
 
-//ÉXÉeÅ[ÉWÉVÅ[Éì
+//„Çπ„ÉÜ„Éº„Ç∏„Ç∑„Éº„É≥
 class StageScene : public IScene {
 public:
 	~StageScene();
@@ -16,5 +16,4 @@ public:
 public:
 	Player* player_;
 	Enemy* enemy_;
-	int stageTex = Novice::LoadTexture("./Resources/stagescene.png");
 };
