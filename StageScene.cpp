@@ -10,7 +10,7 @@ StageScene::~StageScene()
 void StageScene::Init()
 {
 	player_ = new Player({ 1280 / 2, 720 / 2 }, 16, 5, 32);
-	enemy_ = new Enemy({ 100, 300 }, 3, 16, true,32);
+	enemy_ = new Enemy({ 100, 300 }, 3, 16, true, 32);
 }
 
 void StageScene::Update(char* keys, char* preKeys)
