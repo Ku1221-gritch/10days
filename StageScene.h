@@ -3,6 +3,7 @@
 #include"Vector2.h"
 #include"Player.h"
 #include"Enemy.h"
+#include"Gimic.h"
 #include"Novice.h"
 
 //ステージシーン
@@ -16,4 +17,5 @@ public:
 public:
 	Player* player_;
 	Enemy* enemy_;
+	Gimic* gimic_;
 };

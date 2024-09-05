@@ -9,8 +9,10 @@ StageScene::~StageScene()
 
 void StageScene::Init()
 {
-	player_ = new Player({ 1280 / 2, 720 / 2 }, 16, 10,32);
+	player_ = new Player({ 1280 / 2, 720 / 2 }, 32, 10,32);
 	enemy_ = new Enemy({ 100, 300 }, 3, 16, true,32);
+	gimic_ = new Gimic();
+	gimic_->Init(10, { 100,500 },{500,500});
 }
 
 void StageScene::Update(char* keys, char* preKeys)
@@ -32,6 +34,9 @@ void StageScene::Update(char* keys, char* preKeys)
 	if (distance <= enemyRadius + playerRadius) {
 		sceneNo = CLEAR;
 	}
+
+	player_->pos_ = gimic_->Warp(player_->pos_, gimic_->in_, gimic_->out_);
+
 }
 
 void StageScene::Draw()
@@ -40,4 +45,5 @@ void StageScene::Draw()
 	player_->Draw();
 	/*敵の描画関数*/
 	enemy_->Draw();
+	gimic_->Draw();
 }

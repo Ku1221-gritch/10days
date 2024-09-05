@@ -59,6 +59,9 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Gimic.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -139,5 +142,6 @@
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Gimic.h" />
   </ItemGroup>
 </Project>
