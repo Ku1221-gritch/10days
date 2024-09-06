@@ -59,7 +59,7 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
-    <ClCompile Include="Mapchip.cpp">
+    <ClCompile Include="Gimic.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -142,6 +142,6 @@
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Mapchip.h" />
+    <ClInclude Include="Gimic.h" />
   </ItemGroup>
 </Project>
