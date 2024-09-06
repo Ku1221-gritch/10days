@@ -75,7 +75,7 @@ void StageScene::Draw()
 		for (int x = 0; x < kMapMaxX; x++) {
 			//床の描画
 			if (map[y][x] == FLOOR) {
-				Novice::DrawSprite(x * blockSize, y * blockSize, blockTex, 1, 1, 0.0f, WHITE);
+				Novice::DrawSprite(x * blockSize - player_->scrollX_, y * blockSize, blockTex, 1, 1, 0.0f, WHITE);
 			}
 		}
 	}

@@ -12,6 +12,7 @@ public:
 	int playerTex = Novice::LoadTexture("./Resources/player_001.png");
 	Vector2 velocity_;
 	Vector2 accelaration_;
+	int scrollX_;
 
 public:
 	Player(Vector2 pos, int r, int speed, int texGap);

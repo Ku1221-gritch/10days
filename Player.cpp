@@ -8,6 +8,7 @@ Player::Player(Vector2 pos, int r, int speed, int texGap)
 	texGap_ = texGap;
 	velocity_ = { 0.0f,0.0f };
 	accelaration_ = { 0.0f,-0.8f };
+	scrollX_ = 0;
 }
 
 Player::~Player()
@@ -45,10 +46,16 @@ void Player::Update(char* keys, char* preKeys)
 		pos_.y = -20;
 	}*/
 
+
+	///スクロール
+	if ((int)pos_.x >= 640 && (int)pos_.x <= 1408) {
+		scrollX_ = (int)pos_.x - 640;
+	}
+
 }
 
 void Player::Draw()
 {
-	texGap_ = 32;
-	Novice::DrawSprite((int)pos_.x - texGap_, (int)pos_.y, playerTex, 1, 1, 0.0f, WHITE);
+	texGap_ = 64;
+	Novice::DrawSprite((int)pos_.x - texGap_ - scrollX_, (int)pos_.y, playerTex, 1, 1, 0.0f, WHITE);
 }

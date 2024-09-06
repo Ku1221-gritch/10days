@@ -14,7 +14,7 @@ public:
 	void Update(char* keys, char* preKeys) override;
 	void Draw() override;
 	//マップチップを使用したマップサイズの定数
-	static inline const int kMapMaxX = 32;
+	static inline const int kMapMaxX = 64;
 	static inline const int kMapMaxY = 20;
 	bool isStageArea[2];
 	//実装するステージ一覧
@@ -37,7 +37,7 @@ public:
 
 	};
 	//マップチップ1マスの大きさ
-	int blockSize = 32;
+	int blockSize = 64;
 
 public:
 	Player* player_;
