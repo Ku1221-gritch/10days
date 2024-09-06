@@ -44,6 +44,9 @@ public:
 	Enemy* enemy_;
 	Gimic* gimic_;
 
+	void MapChipComPatibleDrawing();//マップチップ対応描画
+
+	//マップチップで使うテクスチャ
 	int blockTex = Novice::LoadTexture("./Resources/block.png");
 #pragma region Map
 	//読み込み元のマップ

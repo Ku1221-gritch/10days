@@ -21,6 +21,7 @@ void Player::Update(char* keys, char* preKeys)
 
 	//if (keys[DIK_S] && preKeys[DIK_S])pos_.y += speed_;
 
+	//左右移動
 	if (keys[DIK_A] && preKeys[DIK_A])pos_.x -= speed_;
 
 	if (keys[DIK_D] && preKeys[DIK_D])pos_.x += speed_;

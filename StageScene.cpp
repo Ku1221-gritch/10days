@@ -16,6 +16,7 @@ void StageScene::Init()
 	for (int i = 0; i < 2; i++) {
 		isStageArea[i] = false;
 	}
+
 }
 
 void StageScene::Update(char* keys, char* preKeys)
@@ -69,8 +70,12 @@ void StageScene::Draw()
 	/*敵の描画関数*/
 	enemy_->Draw();
 	gimic_->Draw();
+	//マップチップ対応描画
+	MapChipComPatibleDrawing();
+}
 
-#pragma region マップチップ対応
+//マップチップ対応描画
+void StageScene::MapChipComPatibleDrawing() {
 	for (int y = 0; y < kMapMaxY; y++) {
 		for (int x = 0; x < kMapMaxX; x++) {
 			//床の描画
@@ -79,5 +84,4 @@ void StageScene::Draw()
 			}
 		}
 	}
-#pragma endregion
 }
