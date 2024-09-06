@@ -26,13 +26,13 @@ void Player::Update(char* keys, char* preKeys)
 	if (keys[DIK_D] && preKeys[DIK_D])pos_.x += speed_;
 
 	//W押したらジャンプするよー
-	if (keys[DIK_W] && preKeys[DIK_W]==0&& pos_.y == 650) {
+	if (keys[DIK_W] && preKeys[DIK_W] == 0 && pos_.y == 650) {
 		velocity_.y = 20.0f;
 	}
 
 	velocity_.x += accelaration_.x;
 	velocity_.y += accelaration_.y;
-	
+
 	pos_.x += velocity_.x;
 	pos_.y -= velocity_.y;
 

@@ -9,8 +9,13 @@ StageScene::~StageScene()
 
 void StageScene::Init()
 {
-	player_ = new Player({ 1280 / 2, 720 / 2 }, 16, 5, 32);
-	enemy_ = new Enemy({ 100, 300 }, 3, 16, true, 32);
+	player_ = new Player({ 1280 / 2, 720 / 2 }, 32, 10,32);
+	enemy_ = new Enemy({ 100, 300 }, 3, 16, true,32);
+	gimic_ = new Gimic();
+	gimic_->Init(10, { 100,500 },{500,500});
+	for (int i = 0; i < 2; i++) {
+		isStageArea[i] = false;
+	}
 }
 
 void StageScene::Update(char* keys, char* preKeys)
@@ -32,7 +37,30 @@ void StageScene::Update(char* keys, char* preKeys)
 	if (distance <= enemyRadius + playerRadius) {
 		sceneNo = CLEAR;
 	}
+
+	player_->pos_ = gimic_->Warp(player_->pos_, gimic_->in_, gimic_->out_);
+
+	if (isNextStage == true) {
+		switch (stage) {
+			case S1:
+				isNextStage = false;
+				memcpy(map, map1, sizeof(map1));
+				memcpy(object, object1, sizeof(object1));
+				break;
+			case S2:
+				isNextStage = false;
+				memcpy(map, map2, sizeof(map2));
+				memcpy(object, object2, sizeof(object2));
+				break;
+			case S3:
+				isNextStage = false;
+				memcpy(map, map3, sizeof(map3));
+				memcpy(object, object3, sizeof(object3));
+				break;
+		}
+	}
 }
+
 
 void StageScene::Draw()
 {
@@ -40,4 +68,16 @@ void StageScene::Draw()
 	player_->Draw();
 	/*敵の描画関数*/
 	enemy_->Draw();
+	gimic_->Draw();
+
+#pragma region マップチップ対応
+	for (int y = 0; y < kMapMaxY; y++) {
+		for (int x = 0; x < kMapMaxX; x++) {
+			//床の描画
+			if (map[y][x] == FLOOR) {
+				Novice::DrawSprite(x * blockSize, y * blockSize, blockTex, 1, 1, 0.0f, WHITE);
+			}
+		}
+	}
+#pragma endregion
 }
