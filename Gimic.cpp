@@ -36,7 +36,6 @@ float Gimic::Distance(Vector2 a, Vector2 b)
 Vector2 Gimic::Warp(Vector2 player, Vector2 in, Vector2 out)
 {
 	if (isWarp_) {
-
 		if (Distance(player, in) <= radius_ * 2) {
 			isWarp_ = false;
 			return { out.x + 20,out.y + 20 };
